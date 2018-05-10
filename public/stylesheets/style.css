@@ -1,8 +1,57 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+body{
+  border-width: 0px;
+  margin: 0px;
+  padding: 0px;
+  font-family: "Poppins";
 }
+nav{
+  background-color: #60d020;
+  transition: 400ms;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-top: 0px;
+  border-top-width: 0px;
+  height: 35px;
+  width: 100%;
+}
+a{
+  padding: 5px 15px 5px 15px;
+  margin-top: 0px;
+  border-top-width: 0px;
+  color: white;
+  transition: 400ms;
+  text-decoration: none;
+  border-right: 2px solid white;
+  display: inline-block;
+  float: left;
+}
+.current{
+  background-color: #40b000;
+}
+a:hover{
+  background-color: #80f040;
+  color: black;
+  padding-right: 25px;
+}
+a#logo{
+  object-fit: contain;
+  display: inline-block;
+  padding: 0px 15px 0px 15px;
+  height: 35px;
+}
+a#logo:hover{
+  background-color: #60d020;
+  color: white;
+  padding-right: 15px;
+}
+a#logo img{
+  filter: brightness(100);
+  display: inline-block;
+  height: 35px;
+}
+a#logo img:after{
+  content: "<img src='globe-with-leaf.png'>";
 
-a {
-  color: #00B7FF;
 }
