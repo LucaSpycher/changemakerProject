@@ -51,7 +51,3 @@ a#logo img{
   display: inline-block;
   height: 35px;
 }
-a#logo img:after{
-  content: "<img src='globe-with-leaf.png'>";
-
-}
