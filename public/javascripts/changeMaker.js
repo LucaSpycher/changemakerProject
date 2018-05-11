@@ -10,3 +10,10 @@ function setupNav(n){
     }
     $("nav").append("<img src='public/images/user.png' id='user'>");
 }
+
+$(document).ready(function(){
+    $("#users").click(function(){
+        $("nav").append("<div id='login'></div>");
+        $("#login").hide().fadeIn(400);
+    })
+});
