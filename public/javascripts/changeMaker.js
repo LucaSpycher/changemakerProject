@@ -7,6 +7,6 @@ function setupNav(n){
         if(n==i){
             $("nav a:last-child").addClass("current");
         }
-        $("nav").append("<img src='public/images/user.png' id='user'>");
     }
+    $("nav").append("<img src='public/images/user.png' id='user'>");
 }
