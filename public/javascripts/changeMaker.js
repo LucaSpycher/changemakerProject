@@ -9,9 +9,8 @@ function setupNav(n){
         }
     }
     $("nav").append("<img src='public/images/user.png' id='user'>").append("<div id='login'></div>");
-    $("#login").hide()
+    $("#login").hide();
     $("#user").click(function(){
-
-        .fadeIn(400);
+        $("#login").fadeToggle(400);
     })
 }
