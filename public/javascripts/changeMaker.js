@@ -11,6 +11,6 @@ function setupNav(n){
     $("nav").append("<img src='public/images/user.png' id='user'>").append("<div id='login'></div>");
     $("#login").hide();
     $("#user").click(function(){
-        $("#login").fadeToggle(400);
+        $("#login").fadeToggle(200);
     })
 }
