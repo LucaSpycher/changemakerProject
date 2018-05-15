@@ -58,3 +58,19 @@ a#logo img{
   float: right;
   margin-right: 15px;
 }
+
+#mealPlanTable {
+  width: 95%;
+  margin: 20px auto;
+}
+
+#mealPlanTable td {
+  width: 125px;
+}
+
+.mealDay {
+  border: black solid 4px;
+  border-radius: 4px;
+  text-align: center;
+  min-height: 400px;
+}
