@@ -3,6 +3,7 @@ body{
   margin: 0px;
   padding: 0px;
   font-family: "Poppins";
+  min-width: 800px;
 }
 nav{
   background-color: #60d020;

@@ -8,12 +8,10 @@ function setupNav(n){
             $("nav a:last-child").addClass("current");
         }
     }
-    $("nav").append("<img src='public/images/user.png' id='user'>");
-}
+    $("nav").append("<img src='public/images/user.png' id='user'>").append("<div id='login'></div>");
+    $("#login").hide()
+    $("#user").click(function(){
 
-$(document).ready(function(){
-    $("#users").click(function(){
-        $("nav").append("<div id='login'></div>");
-        $("#login").hide().fadeIn(400);
+        .fadeIn(400);
     })
-});
+}
