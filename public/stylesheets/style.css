@@ -4,6 +4,7 @@ body{
   padding: 0px;
   font-family: "Poppins";
   min-width: 800px;
+    background-color: rgba(233, 190, 85, 0.18);
 }
 nav{
   background-color: #60d020;
