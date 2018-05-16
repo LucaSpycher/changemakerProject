@@ -2,3 +2,10 @@ body{
     background-image: url("https://i1.wp.com/www.freemealplan.net/wp-content/uploads/2017/05/Food-Free-Meal-Plan.jpg");
     background-size: cover;
 }
+h1 {
+    text-align: center;
+    font-size: 700%;
+    color: #66e222;
+    text-shadow:5px 5px 10px #002d03;
+
+}
