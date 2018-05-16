@@ -2,7 +2,7 @@ body{
   border-width: 0px;
   margin: 0px;
   padding: 0px;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
   min-width: 800px;
 }
 nav{
@@ -60,20 +60,55 @@ a#logo img{
 }
 
 #mealPlanTable {
-  width: 95%;
+  max-width: 800px;
+  overflow: scroll;
   margin: 20px auto;
 }
 
-#mealPlanTable td {
-  width: 125px;
-}
-
 .mealDay {
-  border: black solid 4px;
+  background: #ededed;
+  width: 167px;
+  /*border: black solid 2px;*/
+  max-height: 500px;
   border-radius: 4px;
   text-align: center;
   min-height: 400px;
+  padding-bottom: 40px;
+  position: relative;
+  overflow: hidden;
 }
+
+.mealDay h4 {
+  margin: 10px 0;
+}
+
+.addMealBtn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border: none;
+  border-radius: 0 0 4px 4px;
+  background: #5fd121;
+  color: white;
+  width: 100%;
+  height: 30px;
+  font-family: "poppins", sans-serif;
+}
+
+.addMealBtn:hover {
+  background: #40b001;
+  cursor: pointer;
+}
+
+.addMealBtn:focus {
+  outline: none;
+}
+
+.mealImg {
+  height: 125px;
+  width: 167px;
+}
+
 #login{
   background-color: #60d020;
   width: 180px;
