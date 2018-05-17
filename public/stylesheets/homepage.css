@@ -10,6 +10,7 @@ h1 {
     font-size: 400%;
     color: #4cd341;
     text-shadow:5px 5px 10px #002d03;
+    text-transform: uppercase;
 }
 table{
     width: 80%;
@@ -25,5 +26,12 @@ td:nth-child(2){
 fieldset{
     font-size: 14px;
     line-height: 1.2;
-    color: #046700;
+    border: solid #004001;
+    border-width: 2px 0 2px 0;
+    max-width: 500px;
+}
+legend {
+    color: #004001;
+    font-size: 18px;
+    text-transform: uppercase;
 }

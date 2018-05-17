@@ -17,7 +17,7 @@ nav{
     height: 35px;
     width: 100%;
 }
-a{
+nav a{
     padding: 5px 15px 5px 15px;
     margin-top: 0px;
     border-top-width: 0px;
@@ -31,7 +31,7 @@ a{
 .current{
     background-color: #40b000;
 }
-a:hover{
+nav a:hover{
     background-color: #80f040;
     color: black;
     padding-right: 25px;
@@ -116,4 +116,13 @@ a#logo img{
     position: absolute;
     right: 0;
     top: 37px;
+}
+fieldset a{
+  color: #209000;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 200ms;
+}
+fieldset a:hover{
+  color: black;
 }
