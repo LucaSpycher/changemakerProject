@@ -17,11 +17,21 @@ function setupNav(n){
 
 function setupMealPlanTable() {
     var days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-    var imgs = ['empty-plate.jpg']; //for now
+    var imgs = ['public/images/empty-plate.jpg']; //for now
     var html = '';
     for(var i = 0; i < 7; i++) {
         html += '<td><div class="mealDay"><img class="mealImg" src="'+ imgs[0] +'"><h4>'+ days[i] +'</h4>' +
             '<button class="addMealBtn">Add Meal</button></div></td>';
     }
-    document.getElementById('mealPlanTable').innerHTML = html;
+    $('#mealPlanTable').append(html);
+
+    $('.addMealBtn').on('click', function () {
+        $('#addMealPopUp').fadeIn();
+    });
 }
+
+$(document).ready(function () {
+    $('#addMealPopUp').hide().on('click', function () {
+        $('#addMealPopUp').fadeOut();
+    });
+});
