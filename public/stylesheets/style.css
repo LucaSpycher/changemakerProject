@@ -59,14 +59,11 @@ a#logo img{
   overflow: scroll;
   margin: 20px auto;
 }
-<<<<<<< Updated upstream
 
 .mealDay {
   background: #ededed;
   width: 167px;
-  /*border: black solid 2px;*/
   max-height: 500px;
-=======
 #mealPlanTable td{
   width: 125px;
 }
