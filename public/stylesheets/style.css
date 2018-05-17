@@ -39,10 +39,6 @@ a:hover{
 a#logo{
   object-fit: contain;
   display: inline-block;
-  padding: 0px 15px 0px 15px;
-  height: 35px;
-}
-a#logo:hover{
   background-color: #60d020;
   color: white;
   padding-right: 15px;
@@ -58,18 +54,25 @@ a#logo img{
   float: right;
   margin-right: 15px;
 }
-
 #mealPlanTable {
   max-width: 800px;
   overflow: scroll;
   margin: 20px auto;
 }
+<<<<<<< Updated upstream
 
 .mealDay {
   background: #ededed;
   width: 167px;
   /*border: black solid 2px;*/
   max-height: 500px;
+=======
+#mealPlanTable td{
+  width: 125px;
+}
+.mealDay{
+  border: black solid 4px;
+>>>>>>> Stashed changes
   border-radius: 4px;
   text-align: center;
   min-height: 400px;
