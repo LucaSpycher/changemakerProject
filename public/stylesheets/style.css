@@ -68,7 +68,6 @@ a#logo img{
 .mealDay {
   background: #ededed;
   width: 167px;
-  /*border: black solid 2px;*/
   max-height: 500px;
   border-radius: 4px;
   text-align: center;
@@ -116,5 +115,4 @@ a#logo img{
   position: absolute;
   right: 0;
   top: 37px;
-
 }
