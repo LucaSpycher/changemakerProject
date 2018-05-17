@@ -8,7 +8,7 @@ body {
 h1 {
     text-align: center;
     font-size: 400%;
-    color: #66e222;
+    color: #4cd341;
     text-shadow:5px 5px 10px #002d03;
 }
 table{
@@ -25,4 +25,5 @@ td:nth-child(2){
 fieldset{
     font-size: 14px;
     line-height: 1.2;
+    color: #046700;
 }
