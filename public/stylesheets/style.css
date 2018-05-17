@@ -1,119 +1,119 @@
 body{
-  border-width: 0px;
-  margin: 0px;
-  padding: 0px;
-  font-family: "Poppins", sans-serif;
-  min-width: 800px;
+    border-width: 0px;
+    margin: 0px;
+    padding: 0px;
+    font-family: "Poppins", sans-serif;
+    min-width: 800px;
 }
 nav{
-  background-color: #60d020;
-  transition: 400ms;
-  position: sticky;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin-top: 0px;
-  border-top-width: 0px;
-  height: 35px;
-  width: 100%;
+    background-color: #60d020;
+    transition: 400ms;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-top: 0px;
+    border-top-width: 0px;
+    height: 35px;
+    width: 100%;
 }
 a{
-  padding: 5px 15px 5px 15px;
-  margin-top: 0px;
-  border-top-width: 0px;
-  color: white;
-  transition: 400ms;
-  text-decoration: none;
-  border-right: 2px solid white;
-  display: inline-block;
-  float: left;
+    padding: 5px 15px 5px 15px;
+    margin-top: 0px;
+    border-top-width: 0px;
+    color: white;
+    transition: 400ms;
+    text-decoration: none;
+    border-right: 2px solid white;
+    display: inline-block;
+    float: left;
 }
 .current{
-  background-color: #40b000;
+    background-color: #40b000;
 }
 a:hover{
-  background-color: #80f040;
-  color: black;
-  padding-right: 25px;
+    background-color: #80f040;
+    color: black;
+    padding-right: 25px;
 }
 a#logo{
-  object-fit: contain;
-  display: inline-block;
-  background-color: #60d020;
-  color: white;
-  padding-right: 15px;
+    object-fit: contain;
+    display: inline-block;
+    padding: 0px 15px 0px 15px;
+    height: 35px;
+}
+a#logo:hover{
+    background-color: #60d020;
+    color: white;
+    padding-right: 15px;
 }
 a#logo img{
-  filter: brightness(100);
-  display: inline-block;
-  height: 35px;
+    filter: brightness(100);
+    display: inline-block;
+    height: 35px;
 }
 #user{
-  filter: brightness(100);
-  height: 35px;
-  float: right;
-  margin-right: 15px;
+    filter: brightness(100);
+    height: 35px;
+    float: right;
+    margin-right: 15px;
 }
+
 #mealPlanTable {
-  max-width: 800px;
-  overflow: scroll;
-  margin: 20px auto;
+    max-width: 800px;
+    overflow: scroll;
+    margin: 20px auto;
 }
 
 .mealDay {
-  background: #ededed;
-  width: 167px;
-  max-height: 500px;
-#mealPlanTable td{
-  width: 125px;
-}
-.mealDay{
-  border: black solid 4px;
->>>>>>> Stashed changes
-  border-radius: 4px;
-  text-align: center;
-  min-height: 400px;
-  padding-bottom: 40px;
-  position: relative;
-  overflow: hidden;
+    background: #ededed;
+    width: 167px;
+    /*border: black solid 2px;*/
+    max-height: 500px;
+    border-radius: 4px;
+    text-align: center;
+    min-height: 400px;
+    padding-bottom: 40px;
+    position: relative;
+    overflow: hidden;
 }
 
 .mealDay h4 {
-  margin: 10px 0;
+    margin: 10px 0;
 }
 
 .addMealBtn {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  border: none;
-  border-radius: 0 0 4px 4px;
-  background: #5fd121;
-  color: white;
-  width: 100%;
-  height: 30px;
-  font-family: "poppins", sans-serif;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border: none;
+    border-radius: 0 0 4px 4px;
+    background: #5fd121;
+    color: white;
+    width: 100%;
+    height: 30px;
+    font-family: "poppins", sans-serif;
 }
 
 .addMealBtn:hover {
-  background: #40b001;
-  cursor: pointer;
+    background: #40b001;
+    cursor: pointer;
 }
 
 .addMealBtn:focus {
-  outline: none;
+    outline: none;
 }
 
 .mealImg {
-  height: 125px;
-  width: 167px;
+    height: 125px;
+    width: 167px;
 }
 
 #login{
-  background-color: #60d020;
-  width: 180px;
-  height: 60px;
-  position: absolute;
-  right: 0;
-  top: 37px;
+    background-color: #60d020;
+    width: 180px;
+    height: 60px;
+    position: absolute;
+    right: 0;
+    top: 37px;
 }
