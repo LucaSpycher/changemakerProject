@@ -116,6 +116,7 @@ a#logo img{
     position: absolute;
     right: 0;
     top: 37px;
+    z-index: 20;
 }
 fieldset a{
   color: #209000;
