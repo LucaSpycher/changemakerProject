@@ -162,3 +162,28 @@ fieldset a:hover{
 .closePopUp:hover {
     cursor: pointer;
 }
+input#searchbar{
+    display: block;
+    font-size: 18px;
+    min-width: 540px;
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 6px;
+    padding-right: 60px;
+    padding-left: 12px;
+    border: 1.75px solid #209000;
+    outline: none;
+    font-family: "Poppins";
+    font-weight: 500;
+    color: #209000;
+    border-radius: 10px;
+    background-image: url("../images/square-globe-with-leaf.png");
+    background-size: 32px;
+    background-repeat: no-repeat;
+    background-position: 97.5%;
+}
+input#searchbar::placeholder{
+    color: rgba(32,144,0,.3);
+}
