@@ -31,7 +31,8 @@ function setupMealPlanTable() {
 }
 
 $(document).ready(function () {
-    $('#addMealPopUp').hide().on('click', function () {
+    $('#addMealPopUp').hide();
+    $('.closePopUp').on('click', function () {
         $('#addMealPopUp').fadeOut();
     });
 });

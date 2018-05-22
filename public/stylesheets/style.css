@@ -118,14 +118,15 @@ a#logo img{
     top: 37px;
     z-index: 20;
 }
-fieldset a{
+fieldset a, .bodyLink{
   color: #209000;
   font-weight: bold;
   text-decoration: none;
   transition: 200ms;
 }
-fieldset a:hover{
+fieldset a:hover, .bodyLink:hover{
   color: black;
+    cursor: pointer;
 }
 
 #addMealPopUp {
@@ -139,16 +140,47 @@ fieldset a:hover{
 }
 
 #searchBox {
-    width: 400px;
-    height: 400px;
+    width: 600px;
+    height: 500px;
     position: fixed;
-    top: calc(50% - 200px);
-    left: calc(50% - 200px);
+    top: calc(45% - 250px);
+    left: calc(50% - 300px);
     background: white;
-    border: 2px black solid;
+    /*border: 2px black solid;*/
     border-radius: 4px;
     z-index: 5;
     text-align: center;
+    padding: 20px;
+}
+
+#searchBox>input{
+    float: right;
+    width: 180px;
+    padding-top: 10px;
+    border: black solid 2px;
+    border-radius: 4px 0 0 4px;
+}
+
+
+#mealsSearched {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 350px;
+    height: 413px;
+    margin: 20px 10px;
+    border: black solid 2px;
+    border-radius: 4px;
+}
+
+#mealsSelected {
+    position: absolute;
+    bottom: 103px;
+    right: 20px;
+    width: 200px;
+    border: black solid 2px;
+    border-radius: 4px;
+    height: 310px;
 }
 
 .closePopUp {

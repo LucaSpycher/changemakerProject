@@ -8,6 +8,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="public/javascripts/changeMaker.js"></script>
     <title>Plan a Meal</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 <table id="mealPlanTable"></table>
@@ -17,10 +22,16 @@
     $("#setup").remove();
 </script>
 
+Don't know what to eat? Go check out some <a href="recipes.html" class="bodyLink">recipes</a>
+
 <div id="addMealPopUp">
     <span class="closePopUp">x</span>
     <div id="searchBox">
-        <input placeholder="search for foods">
+        <input placeholder="search by food name">
+        <br><br>
+        <input placeholder="search by main ingredient">
+        <div id="mealsSelected"></div>
+        <div id="mealsSearched"></div>
     </div>
 </div>
 </body>
