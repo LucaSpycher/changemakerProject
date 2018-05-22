@@ -1,5 +1,5 @@
 body {
-    background-image: url("https://i1.wp.com/www.freemealplan.net/wp-content/uploads/2017/05/Food-Free-Meal-Plan.jpg");
+    background-image: url("../images/background.jpg");
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -10,7 +10,6 @@ h1 {
     font-size: 400%;
     color: #4cd341;
     text-shadow:5px 5px 10px #002d03;
-    text-transform: uppercase;
 }
 table{
     width: 80%;
@@ -34,4 +33,7 @@ legend {
     color: #004001;
     font-size: 18px;
     text-transform: uppercase;
+    font-weight: bold;
+    margin: auto;
+    padding: 0 10px 0 10px;
 }
