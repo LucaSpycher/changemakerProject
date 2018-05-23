@@ -35,4 +35,51 @@ $(document).ready(function () {
     $('.closePopUp').on('click', function () {
         $('#addMealPopUp').fadeOut();
     });
+
+    $('#searchBox>input').keypress(function (event) {
+        if(event.which == 13) {
+            if($(this).is('#searchBox:first-child')) {
+                $.ajax({
+                    url: 'https://www.themealdb.com/api/json/v1/1/search.php?s=' + $(this).val(),
+                    success: function (result) {
+                        // console.log(result);
+                        displayMeals(result);
+                    },
+                    error: function () {
+                        alert('Error');
+                    }
+                });
+            } else {
+                var url = 'http://api.nal.usda.gov/ndb/search/?format=json&q=' + $(this).val() + '&sort=n&max=' + 50 + '&api_key=UbHM2FjplenJqUs7PS5TMHT56QTnQWxIdhHWbRMO';
+                $.ajax({
+                    url: url,
+                    type: 'GET',
+                    crossDomain: true,
+                    dataType: 'json',
+                    success: function (result) {
+                        console.log(result);
+                    },
+                    error: function () {
+                        alert('Error');
+                        console.log(url);
+                    }
+                });
+            }
+        }
+    });
 });
+
+function displayMeals(obj) {
+    var html = "";
+    if(obj.meals == null) {
+        html += 'No Results';
+    } else {
+        for (var i = 0; i < obj.meals.length; i++) {
+            var currentMeal = obj.meals[i];
+            html += '<div>';
+            html += '<img class="mealThumb" src="' + currentMeal.strMealThumb +'"><span>' + currentMeal.strMeal +'</span>';
+            html += '</div>';
+        }
+    }
+    $('#mealsSearched').html(html);
+}

@@ -155,10 +155,15 @@ fieldset a:hover, .bodyLink:hover{
 
 #searchBox>input{
     float: right;
-    width: 180px;
+    width: 200px;
+    height: 30px;
     padding-top: 10px;
     border: black solid 2px;
-    border-radius: 4px 0 0 4px;
+    border-radius: 4px;
+    padding-left: 7px;
+    box-sizing: border-box;
+    padding-bottom: 9px;
+    font-family: "Poppins", sans-serif;
 }
 
 
@@ -171,7 +176,22 @@ fieldset a:hover, .bodyLink:hover{
     margin: 20px 10px;
     border: black solid 2px;
     border-radius: 4px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
+
+.mealThumb {
+    height: 30px;
+    width: 30px;
+}
+
+/*#mealsSearched:nth-child(even) {*/
+    /*background: rgba(196, 196, 196, 0.46);*/
+/*}*/
+
+/*#mealsSearched:nth-child(odd) {*/
+    /*background: rgba(101, 101, 101, 0.46);*/
+/*}*/
 
 #mealsSelected {
     position: absolute;
@@ -181,6 +201,7 @@ fieldset a:hover, .bodyLink:hover{
     border: black solid 2px;
     border-radius: 4px;
     height: 310px;
+    box-sizing: border-box;
 }
 
 .closePopUp {
