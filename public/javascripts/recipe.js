@@ -9,7 +9,7 @@ $(document).ready(function(){
                     console.log(result);
                     for(var i=0; i<result.meals.length; i++){
                         console.log(result[i]);
-                        $("body").append("<div class='result'>"+result.meals[i].strMeal+"</div>");
+                        $("body").append("<div class='result'><img src='"+result.meals[i].strMealThumb+"'>"+result.meals[i].strMeal.toUpperCase()+"</div>");
                     }
                 },
                 error: function () {
