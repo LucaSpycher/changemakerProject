@@ -168,6 +168,7 @@ fieldset a:hover, .bodyLink:hover{
 
 
 #mealsSearched {
+    padding: 0;
     position: absolute;
     top: 0;
     left: 10px;
@@ -178,20 +179,44 @@ fieldset a:hover, .bodyLink:hover{
     border-radius: 4px;
     overflow-y: scroll;
     overflow-x: hidden;
+    text-align: left;
+    box-sizing: border-box;
 }
 
-.mealThumb {
-    height: 30px;
-    width: 30px;
+.mealSearchOutput {
+    padding-left: 6px;
 }
 
-/*#mealsSearched:nth-child(even) {*/
-    /*background: rgba(196, 196, 196, 0.46);*/
-/*}*/
+.selected {
+    color: #40b000;
+}
 
-/*#mealsSearched:nth-child(odd) {*/
-    /*background: rgba(101, 101, 101, 0.46);*/
-/*}*/
+.mealSearchOutput:nth-of-type(odd) {
+    background: rgba(196, 196, 196, 0.46);
+}
+
+.mealSearchOutput:hover {
+    background: #5fd121;
+    cursor: pointer;
+}
+
+#addMealsIcon {
+    position: absolute;
+    bottom: 29px;
+    left: 82px;
+}
+
+#cancelMealsIcon {
+    position: absolute;
+    bottom: 29px;
+    left: 250px;
+    opacity: .86;
+}
+
+#addMealsIcon, #cancelMealsIcon {
+    height: 50px;
+    width: 50px;
+}
 
 #mealsSelected {
     position: absolute;

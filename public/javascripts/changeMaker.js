@@ -38,12 +38,12 @@ $(document).ready(function () {
 
     $('#searchBox>input').keypress(function (event) {
         if(event.which == 13) {
-            if($(this).is('#searchBox:first-child')) {
+            if($(this).is('input:first-child')) {
                 $.ajax({
                     url: 'https://www.themealdb.com/api/json/v1/1/search.php?s=' + $(this).val(),
                     success: function (result) {
                         // console.log(result);
-                        displayMeals(result);
+                        displayMeals(result, 0);
                     },
                     error: function () {
                         alert('Error');
@@ -58,6 +58,7 @@ $(document).ready(function () {
                     dataType: 'json',
                     success: function (result) {
                         console.log(result);
+                        displayMeals(result, 1);
                     },
                     error: function () {
                         alert('Error');
@@ -67,19 +68,26 @@ $(document).ready(function () {
             }
         }
     });
+
 });
 
-function displayMeals(obj) {
+function displayMeals(obj, num) {
     var html = "";
-    if(obj.meals == null) {
+    if (num ==1) {var meal = obj.list.item;}
+    else {var meal = obj.meals;}
+
+    if(meal == null) {
         html += 'No Results';
     } else {
-        for (var i = 0; i < obj.meals.length; i++) {
-            var currentMeal = obj.meals[i];
-            html += '<div>';
-            html += '<img class="mealThumb" src="' + currentMeal.strMealThumb +'"><span>' + currentMeal.strMeal +'</span>';
-            html += '</div>';
+        for (var i = 0; i < meal.length; i++) {
+            var currentMeal = meal[i];
+            var addMeal = ['<div class="mealSearchOutput">' + currentMeal.strMeal +'</div>','<div class="mealSearchOutput">' + currentMeal.name +'</div>'];
+            html += addMeal[num];
         }
     }
     $('#mealsSearched').html(html);
+
+    $('.mealSearchOutput').on('click', function () {
+        $(this).toggleClass('selected');
+    });
 }
