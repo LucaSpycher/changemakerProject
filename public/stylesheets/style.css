@@ -322,6 +322,19 @@ div#res{
     text-align: center;
     margin-top: 7.5px;
 }
-div#res>img{
-    height: 50px;
+#res img.focus{
+    position: fixed;
+    height: 500px;
+    top: 0;
+    z-index: 300;
+}
+.shade{
+    background-color: black;
+    opacity: .8333;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
 }
