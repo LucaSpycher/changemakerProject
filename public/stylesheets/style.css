@@ -16,6 +16,7 @@ nav{
     border-top-width: 0px;
     height: 35px;
     width: 100%;
+    z-index: 3;
 }
 nav a{
     padding: 5px 15px 5px 15px;
@@ -283,7 +284,7 @@ div.result span:first-of-type{
     margin-right: 7.5px;
     margin-top: 3px;
     font-size: 14px;
-    line-height: 1.1
+    line-height: 1.1;
     height: 90px;
     color: #404040
 }
