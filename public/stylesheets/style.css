@@ -210,12 +210,13 @@ fieldset a:hover, .bodyLink:hover{
     position: absolute;
     bottom: 29px;
     left: 250px;
-    opacity: .86;
+    transform: rotate(45deg);
 }
 
 #addMealsIcon, #cancelMealsIcon {
     height: 50px;
     width: 50px;
+    opacity: .5;
 }
 
 #mealsSelected {
