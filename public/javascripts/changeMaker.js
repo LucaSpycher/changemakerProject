@@ -35,6 +35,12 @@ $(document).ready(function () {
     $('.closePopUp').on('click', function () {
         $('#addMealPopUp').fadeOut();
     });
+    $('#cancelMealsIcon').on('click', function () {
+        $('#addMealPopUp').fadeOut();
+    });
+    $('#addMealsIcon').on('click', function () {
+        $('#addMealPopUp').fadeOut();
+    });
 
     $('#searchBox>input').keypress(function (event) {
         if(event.which == 13) {
@@ -49,7 +55,7 @@ $(document).ready(function () {
                         alert('Error');
                     }
                 });
-            } else {
+            } else if($(this).is('input:nth-child(4)')){
                 var url = 'http://api.nal.usda.gov/ndb/search/?format=json&q=' + $(this).val() + '&sort=n&max=' + 50 + '&api_key=UbHM2FjplenJqUs7PS5TMHT56QTnQWxIdhHWbRMO';
                 $.ajax({
                     url: url,
@@ -65,8 +71,19 @@ $(document).ready(function () {
                         console.log(url);
                     }
                 });
+            } else {
+                //search for single ingredients in cameron's thing
             }
         }
+    });
+
+    $('#mealsSearched').on('click', function () {
+        var html = '';
+        //console.log(document.getElementsByClassName('selected')[0].innerHTML);
+        for(var i = 0; i < document.getElementsByClassName('selected').length; i++) {
+            html += '<p>'+ document.getElementsByClassName('selected')[i].innerHTML +'</p>';
+        }
+        $('#mealsSelectedDiv').html(html);
     });
 
 });
@@ -81,7 +98,12 @@ function displayMeals(obj, num) {
     } else {
         for (var i = 0; i < meal.length; i++) {
             var currentMeal = meal[i];
-            var addMeal = ['<div class="mealSearchOutput">' + currentMeal.strMeal +'</div>','<div class="mealSearchOutput">' + currentMeal.name +'</div>'];
+            var addMeal = [];
+            if(num == 1) {
+                addMeal = ['','<div class="mealSearchOutput">' + currentMeal.name.split(', UPC')[0] +'</div>'];
+            } else {
+                addMeal = ['<div class="mealSearchOutput">' + currentMeal.strMeal +'</div>', ''];
+            }
             html += addMeal[num];
         }
     }
@@ -91,3 +113,7 @@ function displayMeals(obj, num) {
         $(this).toggleClass('selected');
     });
 }
+
+var monday = {
+    meals: []
+};

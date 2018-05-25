@@ -220,6 +220,10 @@ fieldset a:hover, .bodyLink:hover{
     opacity: .5;
 }
 
+#addMealsIcon:hover, #cancelMealsIcon:hover {
+    cursor: pointer;
+}
+
 #mealsSelected {
     position: absolute;
     bottom: 103px;
@@ -227,8 +231,15 @@ fieldset a:hover, .bodyLink:hover{
     width: 200px;
     border: black solid 2px;
     border-radius: 4px;
-    height: 310px;
+    height: 265px;
     box-sizing: border-box;
+    padding-right: 0;
+}
+
+#mealsSelectedDiv {
+    overflow-y: scroll;
+    height: 233px;
+    text-align: left;
 }
 
 .closePopUp {
