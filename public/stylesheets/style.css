@@ -4,10 +4,10 @@ body{
     padding: 0px;
     font-family: "Poppins", sans-serif;
     min-width: 800px;
+    transition: 400ms;
 }
 nav{
     background-color: #60d020;
-    transition: 400ms;
     position: sticky;
     top: 0;
     left: 0;
@@ -337,4 +337,15 @@ div#res{
     left: 0;
     right: 0;
     z-index: 200;
+}
+div#res div.result img.linkimg{
+    height: 25px;
+    opacity: .2;
+    position: absolute;
+    margin-top: 72.5px;
+    margin-left: 192.5px;
+    transition: 200ms;
+}
+div#res div.result img.linkimg:hover{
+    opacity: .6;
 }
