@@ -240,6 +240,16 @@ fieldset a:hover, .bodyLink:hover{
     overflow-y: scroll;
     height: 233px;
     text-align: left;
+    font-size: 12px;
+    padding-left: 1px;
+}
+
+#mealsSelectedDiv ol {
+    padding-left: 16px;
+}
+
+#mealsSelectedDiv ol li {
+    margin-bottom: 5px
 }
 
 .closePopUp {
