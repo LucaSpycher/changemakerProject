@@ -27,6 +27,9 @@ function setupMealPlanTable() {
 
     $('.addMealBtn').on('click', function () {
         $('#addMealPopUp').fadeIn();
+        $('#mealsSearched').html('');
+        $('#searchBox>input').val('');
+        $('#mealsSelectedDiv').html('');
     });
 }
 
@@ -102,9 +105,9 @@ function displayMeals(obj, num) {
             var currentMeal = meal[i];
             var addMeal = [];
             if(num == 1) {
-                addMeal = ['','<div data-meal-object = "' + currentMeal +'" class="mealSearchOutput">' + currentMeal.name.split(', UPC')[0].split(', GTIN')[0] +'</div>'];
+                addMeal = ['','<div data-meal="usda;'+ currentMeal.nbdno +'" class="mealSearchOutput unselected">' + currentMeal.name.split(', UPC')[0].split(', GTIN')[0] +'</div>'];
             } else {
-                addMeal = ['<div class="mealSearchOutput">' + currentMeal.strMeal +'</div>', ''];
+                addMeal = ['<div data-meal="mealDb;'+ currentMeal.idMeal +'" class="mealSearchOutput unselected">' + currentMeal.strMeal +'</div>', ''];
             }
             html += addMeal[num];
         }
@@ -113,6 +116,15 @@ function displayMeals(obj, num) {
 
     $('.mealSearchOutput').on('click', function () {
         $(this).toggleClass('selected');
+        $(this).toggleClass('unselected');
+    });
+    $('.unselected').on('click', function () {
+        //add to selected array
+        //update selected
+    });
+    $('.selected').on('click', function () {
+        //remove from selected array
+        //update selected
     });
 }
 
