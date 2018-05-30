@@ -21,7 +21,7 @@ function setupMealPlanTable() {
     var html = '';
     for(var i = 0; i < 7; i++) {
         html += '<td><div class="mealDay"><img class="mealImg" src="'+ imgs[0] +'"><h4>'+ days[i] +'</h4>' +
-            '<button class="addMealBtn">Add Meal</button></div></td>';
+            '<button data-day="'+ days[i].toLowerCase() +'" class="addMealBtn">Add Meal</button></div></td>';
     }
     $('#mealPlanTable').append(html);
 
@@ -36,9 +36,6 @@ $(document).ready(function () {
         $('#addMealPopUp').fadeOut();
     });
     $('#cancelMealsIcon').on('click', function () {
-        $('#addMealPopUp').fadeOut();
-    });
-    $('#addMealsIcon').on('click', function () {
         $('#addMealPopUp').fadeOut();
     });
 
@@ -78,14 +75,19 @@ $(document).ready(function () {
     });
 
     $('#mealsSearched').on('click', function () {
-        var html = '';
+        var html = '<ol>';
         //console.log(document.getElementsByClassName('selected')[0].innerHTML);
         for(var i = 0; i < document.getElementsByClassName('selected').length; i++) {
-            html += '<p>'+ document.getElementsByClassName('selected')[i].innerHTML +'</p>';
+            html += '<li>'+ document.getElementsByClassName('selected')[i].innerHTML +'</li>';
         }
+        html+= '</ol>';
         $('#mealsSelectedDiv').html(html);
     });
 
+    $('#addMealsIcon').on('click', function () {
+        $('#addMealPopUp').fadeOut();
+        console.log($('.selected:eq(0)').data());
+    });
 });
 
 function displayMeals(obj, num) {
@@ -100,7 +102,7 @@ function displayMeals(obj, num) {
             var currentMeal = meal[i];
             var addMeal = [];
             if(num == 1) {
-                addMeal = ['','<div class="mealSearchOutput">' + currentMeal.name.split(', UPC')[0] +'</div>'];
+                addMeal = ['','<div data-meal-object = "' + currentMeal +'" class="mealSearchOutput">' + currentMeal.name.split(', UPC')[0].split(', GTIN')[0] +'</div>'];
             } else {
                 addMeal = ['<div class="mealSearchOutput">' + currentMeal.strMeal +'</div>', ''];
             }
@@ -114,6 +116,34 @@ function displayMeals(obj, num) {
     });
 }
 
+var selected = [];
+
 var monday = {
-    meals: []
+    meals: [],
+    carbonFootprint: {}
+};
+
+var tuesday = {
+    meals: [],
+    carbonFootprint: {}
+};
+var wednesday = {
+    meals: [],
+    carbonFootprint: {}
+};
+var thursday = {
+    meals: [],
+    carbonFootprint: {}
+};
+var friday = {
+    meals: [],
+    carbonFootprint: {}
+};
+var saturday = {
+    meals: [],
+    carbonFootprint: {}
+};
+var sunday = {
+    meals: [],
+    carbonFootprint: {}
 };
