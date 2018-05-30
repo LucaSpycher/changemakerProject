@@ -2,6 +2,7 @@ $(document).ready(function(){
     $("input").keyup(function(){
         if(event.code == "Enter" && this.value!=""){
             var searchterm = this.value.toLowerCase().replace(" ","+");;
+            $("input").mouseout().attr("placeholder",$("input").val()).val('');
             $.ajax({
                 url: 'https://www.themealdb.com/api/json/v1/1/search.php?s='+searchterm,
                 success: function(result){
@@ -14,7 +15,7 @@ $(document).ready(function(){
                             +result.meals[i].strMeal.toUpperCase()
                             +"</em><i>"
                             +result.meals[i].strArea
-                            +"</i> <i>"
+                            +"</i> <i"
                             +removeTag(result.meals[i].strTags)
                             +"</i> Ingredients: "
                             +result.meals[i].strIngredient1+", "
@@ -28,6 +29,7 @@ $(document).ready(function(){
                     for(var i=0; i<result.meals.length; i++){
                         $("#res div.result:nth-child("+(i+1)+")").delay(100*i).animate({"opacity":1},200);
                     }
+                    $("i.remove").remove();
                     $("div#res div.result img.linkimg").click(function(){
                         var win = window.open($(this).data("source"));
                         if (win) {
@@ -67,10 +69,10 @@ $(document).ready(function(){
 
 function removeTag(str){
     if(str==null){
-        return "No Tags";
+        return " class='remove'>";
     }if(str.indexOf(",")==-1){
-        return str;
+        return ">"+str;
     }else{
-        return str.substring(0,str.indexOf(","));
+        return ">"+str.substring(0,str.indexOf(","));
     }
 }
