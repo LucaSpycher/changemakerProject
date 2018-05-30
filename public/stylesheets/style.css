@@ -259,6 +259,7 @@ input#searchbar{
     min-width: 540px;
     width: 80%;
     max-width: 800px;
+    transition: 200ms;
     margin: 0 auto;
     margin-top: 10px;
     padding: 6px;
@@ -288,6 +289,7 @@ div.result{
     display: inline-block;
     margin: 5px;
     text-align: left;
+    overflow: hidden;
 }
 div.result span:first-of-type{
     float: right;
@@ -307,6 +309,7 @@ div.result span:first-of-type em{
     border-bottom: 2px solid white;
     display: block;
     color: #004001;
+    user-select: none;
 }
 div.result span:first-of-type i{
     font-style: normal;
@@ -317,6 +320,7 @@ div.result span:first-of-type i{
     display: inline-block;
     margin-top: 3px;
     text-transform: uppercase;
+    user-select: none;
 }
 div#res{
     text-align: center;
