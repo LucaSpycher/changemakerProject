@@ -5,6 +5,7 @@ body{
     font-family: "Poppins", sans-serif;
     min-width: 800px;
     transition: 400ms;
+    transition-property: color,width,height,background-color,opacity;
 }
 nav{
     background-color: #60d020;
@@ -24,6 +25,7 @@ nav a{
     border-top-width: 0px;
     color: white;
     transition: 400ms;
+    transition-property: color,width,height,background-color,opacity;
     text-decoration: none;
     border-right: 2px solid white;
     display: inline-block;
@@ -124,6 +126,7 @@ fieldset a, .bodyLink{
   font-weight: bold;
   text-decoration: none;
   transition: 200ms;
+  transition-property: color,width,height,background-color,opacity;
 }
 fieldset a:hover, .bodyLink:hover{
   color: black;
@@ -270,6 +273,7 @@ input#searchbar{
     width: 80%;
     max-width: 800px;
     transition: 200ms;
+    transition-property: color,width,height,background-color,opacity;
     margin: 0 auto;
     margin-top: 10px;
     padding: 6px;
@@ -359,6 +363,7 @@ div#res div.result img.linkimg{
     margin-top: 72.5px;
     margin-left: 192.5px;
     transition: 200ms;
+    transition-property: color,width,height,background-color,opacity;
 }
 div#res div.result img.linkimg:hover{
     opacity: .6;
