@@ -30,15 +30,18 @@ function setupMealPlanTable() {
         $('#mealsSearched').html('');
         $('#searchBox>input').val('');
         $('#mealsSelectedDiv').html('');
+        $("nav, table, body>a, body>span").css("filter","blur(6px)");
     });
 }
 
 $(document).ready(function () {
     $('#addMealPopUp').hide();
     $('.closePopUp').on('click', function () {
+        $("nav, table, body>a, body>span").css("filter","blur(0px)");
         $('#addMealPopUp').fadeOut();
     });
     $('#cancelMealsIcon').on('click', function () {
+        $("nav, table, body>a, body>span").css("filter","blur(0px)");
         $('#addMealPopUp').fadeOut();
     });
 
@@ -89,6 +92,7 @@ $(document).ready(function () {
 
     $('#addMealsIcon').on('click', function () {
         $('#addMealPopUp').fadeOut();
+        $("nav, table, body>a, body>span").css("filter","blur(0px)");
         console.log($('.selected:eq(0)').data());
     });
 });

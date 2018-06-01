@@ -136,7 +136,7 @@ fieldset a:hover, .bodyLink:hover{
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(44, 44, 44, 0.65);
+    background: rgba(0, 0, 0, 0.63333);
     z-index: 4;
 }
 
