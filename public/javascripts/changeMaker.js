@@ -1,4 +1,5 @@
 var PAGES = [["Homepage","index"],["Plan a Meal","mealplan"],["Environmental Impact","impact"],["Get Recipes","recipes"]];
+var day = '';
 
 function setupNav(n){
     $("body").prepend("<nav><a id='logo' href='index.html'><img src='public/images/globe-with-leaf.png'></a></nav>");
@@ -21,7 +22,7 @@ function setupMealPlanTable() {
     var html = '';
     for(var i = 0; i < 7; i++) {
         html += '<td><div class="mealDay"><img class="mealImg" src="'+ imgs[0] +'"><h4>'+ days[i] +'</h4>' +
-            '<button data-day="'+ days[i].toLowerCase() +'" class="addMealBtn">Add Meal</button></div></td>';
+            '<button data-day="'+ i +'" class="addMealBtn">Add Meal</button></div></td>';
     }
     $('#mealPlanTable').append(html);
 
@@ -31,6 +32,7 @@ function setupMealPlanTable() {
         $('#searchBox>input').val('');
         $('#mealsSelectedDiv').html('');
         $("nav, table, body>a, body>span").css("filter","blur(6px)");
+        day = $(this).data('day');
     });
 }
 
@@ -93,7 +95,12 @@ $(document).ready(function () {
     $('#addMealsIcon').on('click', function () {
         $('#addMealPopUp').fadeOut();
         $("nav, table, body>a, body>span").css("filter","blur(0px)");
-        console.log($('.selected:eq(0)').data());
+        var arr = [monday, tuesday, wednesday, thursday, friday, saturday, sunday];
+        for(var i = 0; i < document.getElementsByClassName('selected').length; i++) {
+            var selector = '.selected:eq('+ i +')';
+            console.log($(selector).data('meal'));
+            arr[day].meals.push({api: $(selector).data('meal').split(';')[0], id: $(selector).data('meal').split(';')[1]});
+        }
     });
 });
 
@@ -132,7 +139,14 @@ function displayMeals(obj, num) {
     });
 }
 
-var selected = [];
+function displayMealsInDays() {
+    var arr = [monday, tuesday, wednesday, thursday, friday, saturday, sunday];
+    for(var i = 0; i < arr.length; i++) {
+        for(var l = 0; l < arr[i].meals.length; l++) {
+
+        }
+    }
+}
 
 var monday = {
     meals: [],
