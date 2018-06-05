@@ -114,12 +114,27 @@ a#logo img{
 
 #login{
     background-color: #60d020;
-    width: 180px;
-    height: 60px;
+    width: 240px;
     position: absolute;
     right: 0;
     top: 37px;
     z-index: 20;
+}
+#login table{
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+}
+#login td{
+    width: 105px;
+    border-bottom:6px solid #60d020;
+    text-align: center;
+}
+#login td:first-of-type{
+    border-right: 6px solid #60d020;
+}
+#login td:hover{
+    background-color: white;
 }
 fieldset a, .bodyLink{
   color: #209000;
