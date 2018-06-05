@@ -95,23 +95,35 @@ $(document).ready(function () {
 
     $('#mealsSearched').on('click', function () {
         var html = '<ol>';
+        var arr = [];
         //console.log(document.getElementsByClassName('selected')[0].innerHTML);
         for(var i = 0; i < document.getElementsByClassName('selected').length; i++) {
             html += '<li>'+ document.getElementsByClassName('selected')[i].innerHTML +'</li>';
+            arr.push(document.getElementsByClassName('selected')[i].innerHTML);
         }
         html+= '</ol>';
         $('#mealsSelectedDiv').html(html);
+        selected = arr;
     });
 
     $('#addMealsIcon').on('click', function () {
-        $('#addMealPopUp').fadeOut();
         $("nav, table, body>a, body>span").css("filter","blur(0px)");
         var arr = [monday, tuesday, wednesday, thursday, friday, saturday, sunday];
         for(var i = 0; i < document.getElementsByClassName('selected').length; i++) {
             var selector = '.selected:eq('+ i +')';
             console.log($(selector).data('meal'));
-            arr[day].meals.push({api: $(selector).data('meal').split(';')[0], id: $(selector).data('meal').split(';')[1]});
+            arr[day].meals.push({api: $(selector).data('meal').split(';')[0], id: $(selector).data('meal').split(';')[1], name: document.getElementsByClassName('selected')[i].innerHTML});
         }
+        displayMealsInDays();
+        $('#addMealPopUp').fadeOut();
+        $('.addMealBtn').on('click', function () {
+            $('#addMealPopUp').fadeIn();
+            $('#mealsSearched').html('');
+            $('#searchBox>input').val('');
+            $('#mealsSelectedDiv').html('');
+            $("nav, table, body>a, body>span").css("filter","blur(6px)");
+            day = $(this).data('day');
+        });
     });
 });
 
@@ -140,51 +152,47 @@ function displayMeals(obj, num) {
         $(this).toggleClass('selected');
         $(this).toggleClass('unselected');
     });
-    $('.unselected').on('click', function () {
-        //add to selected array
-        //update selected
-    });
-    $('.selected').on('click', function () {
-        //remove from selected array
-        //update selected
-    });
+    // $('.unselected').on('click', function () {
+    //     //add to selected array
+    //     //update selected
+    // });
+    // $('.selected').on('click', function () {
+    //     //remove from selected array
+    //     //update selected
+    // });
 }
 
 function displayMealsInDays() {
+
     var arr = [monday, tuesday, wednesday, thursday, friday, saturday, sunday];
     for(var i = 0; i < arr.length; i++) {
+        var html = '';
         for(var l = 0; l < arr[i].meals.length; l++) {
+            var currentMeal = arr[i].meals[l];
+            html += '<div>' + currentMeal.name + '</div>'
+        }
+        document.getElementsByClassName('mealDay')[i].innerHTML += html;
+    }
+}
 
+var selected = [];
+
+function Day() {
+    this.meals = [];
+    this.carbonFootprint = {};
+    this.remove = function (name) {
+        for(var i = 0; i < this.meals.length; i++) {
+            if(name == this.meals[i].name) {
+                this.meals.splice(i, 1);
+            }
         }
     }
 }
 
-var monday = {
-    meals: [],
-    carbonFootprint: {}
-};
-
-var tuesday = {
-    meals: [],
-    carbonFootprint: {}
-};
-var wednesday = {
-    meals: [],
-    carbonFootprint: {}
-};
-var thursday = {
-    meals: [],
-    carbonFootprint: {}
-};
-var friday = {
-    meals: [],
-    carbonFootprint: {}
-};
-var saturday = {
-    meals: [],
-    carbonFootprint: {}
-};
-var sunday = {
-    meals: [],
-    carbonFootprint: {}
-};
+var monday = new Day();
+var tuesday = new Day();
+var wednesday = new Day();
+var thursday = new Day();
+var friday = new Day();
+var saturday = new Day();
+var sunday = new Day();
