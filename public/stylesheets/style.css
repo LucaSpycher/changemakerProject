@@ -119,6 +119,8 @@ a#logo img{
     right: 0;
     top: 37px;
     z-index: 20;
+    transition: 400ms;
+    transition-property: color,width,height,background-color,opacity,padding;
 }
 #login table{
     width: 90%;
@@ -382,4 +384,13 @@ div#res div.result img.linkimg{
 }
 div#res div.result img.linkimg:hover{
     opacity: .6;
+}
+#login td>input[type=number]{
+    font-size: 14px;
+    border: none;
+    width: 95px;
+    padding: 0px 4px 0px 6px;
+    height: 27px;
+    margin: auto;
+    outline: none;
 }

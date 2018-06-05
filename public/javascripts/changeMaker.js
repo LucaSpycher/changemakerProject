@@ -17,7 +17,7 @@ function setupNav(n){
         console.log("new user");
     });
     $("#login td:nth-child(2)").click(function(){
-        $(this).empty().append("<input id='numUser' type='number'>");
+        $(this).off("click").empty().append("<input id='numUser' type='number' placeholder='Usernumber'>").css("padding","0px");
         $("#numUser").keyup(function(){
             if(event.code == "Enter" && this.value!=""){
                 console.log("user #"+$("#numUser").val());
