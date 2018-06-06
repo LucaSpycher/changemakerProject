@@ -26,6 +26,27 @@ function setupNav(n){
     });
 }
 
+function login(n){
+
+}
+
+function newUser(){
+    var usr = reload("users");
+    usr.push([])
+}
+
+//this will save an array of objects to a local storage
+function download(array, name) {
+
+}
+
+//this retrieves data from local storage
+function reload(name) {
+    var text = localStorage.getItem(name);
+    var obj = JSON.parse(text);
+    return obj;
+}
+
 
 var selected = [];
 
@@ -40,11 +61,3 @@ function Day() {
         }
     }
 }
-
-var monday = new Day();
-var tuesday = new Day();
-var wednesday = new Day();
-var thursday = new Day();
-var friday = new Day();
-var saturday = new Day();
-var sunday = new Day();

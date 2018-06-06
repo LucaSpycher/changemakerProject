@@ -1,4 +1,11 @@
 var day = '';
+var monday = new Day();
+var tuesday = new Day();
+var wednesday = new Day();
+var thursday = new Day();
+var friday = new Day();
+var saturday = new Day();
+var sunday = new Day();
 
 function setupMealPlanTable() {
     var days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
