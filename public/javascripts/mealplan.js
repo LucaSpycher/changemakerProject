@@ -114,9 +114,9 @@ $(document).ready(function () {
         for(var i = 0; i < document.getElementsByClassName('selectedRemove').length; i++) {
             var selector = '.selectedRemove:eq(' + i +')';
             var meal = $(selector);
-            console.log(meal.parents.data('day'));
-            //arr[meal.parents.data('day')]
+            arr[meal.parent('div').parent('div').find('button').data('day')].remove($(meal).html());
         }
+        displayMealsInDays();
     });
 });
 
@@ -159,8 +159,30 @@ function displayMealsInDays() {
     var arr = [monday, tuesday, wednesday, thursday, friday, saturday, sunday];
     for(var i = 0; i < arr.length; i++) {
         var html = '';
+        console.log(i);
         for(var l = 0; l < arr[i].meals.length; l++) {
+            console.log('l=' + l);
+            var img = false;
             var currentMeal = arr[i].meals[l];
+            console.log(l == 0 || !img);
+            console.log(currentMeal.api == 'mealDb');
+            if(currentMeal.api == 'mealDb' && (l == 0 || !img)) {
+                $.ajax({
+                    url: 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + currentMeal.id,
+                    success: function (result) {
+                        var selector = '.mealDay:eq(' + i + ')';
+                        console.log(i);
+                        console.log($(selector));
+                        console.log(result.meals[0].strMealThumb);
+                        $(selector).attr('src', result.meals[0].strMealThumb);
+                    },
+                    error: function () {
+                        alert('Error');
+                    }
+                });
+                //https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772
+                img = true;
+            }
             html += '<div class="mealName">' + currentMeal.name + '</div>'
         }
         var selector = '.mealDay:eq(' + i + ')>div';
@@ -170,4 +192,5 @@ function displayMealsInDays() {
     $('.mealName').on('click', function () {
         $(this).toggleClass('selectedRemove');
     });
+    //saveMeal();
 }
