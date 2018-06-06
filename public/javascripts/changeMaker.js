@@ -11,6 +11,14 @@ function Day() {
     }
 }
 var thisPage = 0;
+var isLoggedIn=false;
+
+$(document).ready(function(){
+    var user = getParameterByName("user");
+    if(user != null){
+        login(user);
+    }
+});
 
 function setupNav(n){
     thisPage = n;
@@ -38,32 +46,60 @@ function setupNav(n){
         });
     });
 }
-
-function login(n){
-
-}
-
-function newUser(){
-    var usr = reload("users");
-    if(thisPage==1){
-
-    }else{
-        usr.push([new Day(),new Day(),new Day(),new Day(),new Day(),new Day(),new Day()]);
-    }
-    login(users.length-1);
-}
-
-//this will save an array of objects to a local storage
-function download(array, name) {
-    var json = JSON.stringify(array);
-    localStorage.setItem(name, json);
-}
-
-
-//this retrieves data from local storage
-function reload(name) {
-    var text = localStorage.getItem(name);
-    var obj = JSON.parse(text);
-    return obj;
-}
-
+//
+// function login(n,isNew){
+//     isLoggedIn = true;
+//     for(var i=0; i<$("a").length; i++){
+//         var prev = $("a").eq(i).attr("href");
+//         $("a").eq(i).attr("href",prev+"?user="+n);
+//     }
+//     $("nav>img").css("filter","brightness(0)");
+//     if(thisPage==1 && !isNew){
+//
+//     }else{
+//
+//     }
+// }
+//
+// function newUser(){
+//     var usr = reload("users");
+//     if(thisPage==1){
+//         usr.push([monday,tuesday,wednesday,thursday,friday,saturday,sunday]);
+//     }else{
+//         usr.push([new Day(),new Day(),new Day(),new Day(),new Day(),new Day(),new Day()]);
+//     }
+//     download(usr,"users");
+//     login(users.length-1,true);
+// }
+//
+// function saveMeal(){
+//     if(isLoggedIn){
+//         var slate = [monday,tuesday,wednesday,thursday,friday,saturday,sunday];
+//         var usr = reload("users");
+//         usr[user]=slate;
+//     }
+// }
+//
+// //this will save an array of objects to a local storage
+// function download(array, name) {
+//     var json = JSON.stringify(array);
+//     localStorage.setItem(name, json);
+// }
+//
+// //this retrieves data from local storage
+// function reload(name) {
+//     var text = localStorage.getItem(name);
+//     var obj = JSON.parse(text);
+//     return obj;
+// }
+//
+// function getParameterByName(name, url) {
+//     if (!url) url = window.location.href;
+//     name = name.replace(/[\[\]]/g, "\\$&");
+//     var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+//         results = regex.exec(url);
+//     if (!results) return null;
+//     if (!results[2]) return '';
+//     return decodeURIComponent(results[2].replace(/\+/g, " "));
+// }
+//
