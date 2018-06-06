@@ -6,6 +6,7 @@ var thursday = new Day();
 var friday = new Day();
 var saturday = new Day();
 var sunday = new Day();
+var selected = [];
 
 function setupMealPlanTable() {
     var days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];

@@ -1,6 +1,19 @@
 var PAGES = [["Homepage","index"],["Plan a Meal","mealplan"],["Environmental Impact","impact"],["Get Recipes","recipes"]];
+function Day() {
+    this.meals = [];
+    this.carbonFootprint = {};
+    this.remove = function (name) {
+        for(var i = 0; i < this.meals.length; i++) {
+            if(name == this.meals[i].name) {
+                this.meals.splice(i, 1);
+            }
+        }
+    }
+}
+var thisPage = 0;
 
 function setupNav(n){
+    thisPage = n;
     $("body").prepend("<nav><a id='logo' href='index.html'><img src='public/images/globe-with-leaf.png'></a></nav>");
     for(var i=0; i<4; i++){
         $("nav").append("<a href='"+PAGES[i][1]+".html'>"+PAGES[i][0]+"</a>");
@@ -32,13 +45,20 @@ function login(n){
 
 function newUser(){
     var usr = reload("users");
-    usr.push([])
+    if(thisPage==1){
+
+    }else{
+        usr.push([new Day(),new Day(),new Day(),new Day(),new Day(),new Day(),new Day()]);
+    }
+    login(users.length-1);
 }
 
 //this will save an array of objects to a local storage
 function download(array, name) {
-
+    var json = JSON.stringify(array);
+    localStorage.setItem(name, json);
 }
+
 
 //this retrieves data from local storage
 function reload(name) {
@@ -47,17 +67,3 @@ function reload(name) {
     return obj;
 }
 
-
-var selected = [];
-
-function Day() {
-    this.meals = [];
-    this.carbonFootprint = {};
-    this.remove = function (name) {
-        for(var i = 0; i < this.meals.length; i++) {
-            if(name == this.meals[i].name) {
-                this.meals.splice(i, 1);
-            }
-        }
-    }
-}
