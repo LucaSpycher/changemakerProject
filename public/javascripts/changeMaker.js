@@ -25,3 +25,26 @@ function setupNav(n){
         });
     });
 }
+
+
+var selected = [];
+
+function Day() {
+    this.meals = [];
+    this.carbonFootprint = {};
+    this.remove = function (name) {
+        for(var i = 0; i < this.meals.length; i++) {
+            if(name == this.meals[i].name) {
+                this.meals.splice(i, 1);
+            }
+        }
+    }
+}
+
+var monday = new Day();
+var tuesday = new Day();
+var wednesday = new Day();
+var thursday = new Day();
+var friday = new Day();
+var saturday = new Day();
+var sunday = new Day();

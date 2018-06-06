@@ -2,11 +2,11 @@ var day = '';
 
 function setupMealPlanTable() {
     var days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-    var imgs = ['public/images/empty-plate.jpg']; //for now
+    var imgs = ['public/images/empty-plate.jpg']; //in case you want different images for each day
     var html = '';
     for(var i = 0; i < 7; i++) {
         html += '<td><div class="mealDay"><img class="mealImg" src="'+ imgs[0] +'"><h4>'+ days[i] +'</h4>' +
-            '<button data-day="'+ i +'" class="addMealBtn">Add Meal</button></div></td>';
+            '<div></div><button data-day="'+ i +'" class="addMealBtn">Add Meal</button></div></td>';
     }
     $('#mealPlanTable').append(html);
 
@@ -33,6 +33,7 @@ $(document).ready(function () {
 
     $('#searchBox>input').keypress(function (event) {
         if(event.which == 13) {
+            $(this).val('');
             if($(this).is('input:first-child')) {
                 $.ajax({
                     url: 'https://www.themealdb.com/api/json/v1/1/search.php?s=' + $(this).val(),
@@ -98,6 +99,17 @@ $(document).ready(function () {
             day = $(this).data('day');
         });
     });
+
+
+    $('#removeMealBtn').on('click', function () {
+        var arr = [monday, tuesday, wednesday, thursday, friday, saturday, sunday];
+        for(var i = 0; i < document.getElementsByClassName('selectedRemove').length; i++) {
+            var selector = '.selectedRemove:eq(' + i +')';
+            var meal = $(selector);
+            console.log(meal.parents.data('day'));
+            //arr[meal.parents.data('day')]
+        }
+    });
 });
 
 function displayMeals(obj, num) {
@@ -136,36 +148,18 @@ function displayMeals(obj, num) {
 }
 
 function displayMealsInDays() {
-
     var arr = [monday, tuesday, wednesday, thursday, friday, saturday, sunday];
     for(var i = 0; i < arr.length; i++) {
         var html = '';
         for(var l = 0; l < arr[i].meals.length; l++) {
             var currentMeal = arr[i].meals[l];
-            html += '<div>' + currentMeal.name + '</div>'
+            html += '<div class="mealName">' + currentMeal.name + '</div>'
         }
-        document.getElementsByClassName('mealDay')[i].innerHTML += html;
+        var selector = '.mealDay:eq(' + i + ')>div';
+        $(selector).html(html);
     }
+
+    $('.mealName').on('click', function () {
+        $(this).toggleClass('selectedRemove');
+    });
 }
-
-var selected = [];
-
-function Day() {
-    this.meals = [];
-    this.carbonFootprint = {};
-    this.remove = function (name) {
-        for(var i = 0; i < this.meals.length; i++) {
-            if(name == this.meals[i].name) {
-                this.meals.splice(i, 1);
-            }
-        }
-    }
-}
-
-var monday = new Day();
-var tuesday = new Day();
-var wednesday = new Day();
-var thursday = new Day();
-var friday = new Day();
-var saturday = new Day();
-var sunday = new Day();

@@ -98,13 +98,23 @@ a#logo img{
     font-family: "poppins", sans-serif;
 }
 
-.addMealBtn:hover {
+.addMealBtn:hover, #removeMealBtn:hover {
     background: #40b001;
     cursor: pointer;
 }
 
-.addMealBtn:focus {
+.addMealBtn:focus, #removeMealBtn:focus {
     outline: none;
+}
+
+#removeMealBtn {
+    border: none;
+    border-radius: 4px;
+    background: #5fd121;
+    color: white;
+    width: 170px;
+    height: 30px;
+    font-family: "poppins", sans-serif;
 }
 
 .mealImg {
@@ -208,6 +218,10 @@ fieldset a:hover, .bodyLink:hover{
 
 .selected {
     color: #40b000;
+}
+
+.selectedRemove {
+    background: rgba(255, 246, 103, 0.65);
 }
 
 .mealSearchOutput:nth-of-type(odd) {
