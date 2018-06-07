@@ -181,7 +181,5 @@ function displayMealsInDays() {
     $('.mealName').on('click', function () {
         $(this).toggleClass('selectedRemove');
     });
-    //saveMeal();
-
-    console.log(imgArray);
+    saveMeal();
 }
