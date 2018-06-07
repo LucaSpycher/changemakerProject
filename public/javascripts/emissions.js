@@ -212,6 +212,7 @@ function total(ingredients, quantity, day) {
         values[i] = values[i] * (quantity[i] * .001);
         total = values[i] + total;
     }
+    console.log(total);
     day.carbonFootprint += total
 }
 //salt and pepper none

@@ -1,20 +1,12 @@
 var day = '';
-var monday = new Day();
-var tuesday = new Day();
-var wednesday = new Day();
-var thursday = new Day();
-var friday = new Day();
-var saturday = new Day();
-var sunday = new Day();
-var selected = [];
 
 function setupMealPlanTable() {
     var days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-    var imgs = ['public/images/empty-plate.jpg']; //in case you want different images for each day
+    var imgs = ['public/images/empty-plate.jpg']; //for now
     var html = '';
     for(var i = 0; i < 7; i++) {
         html += '<td><div class="mealDay"><img class="mealImg" src="'+ imgs[0] +'"><h4>'+ days[i] +'</h4>' +
-            '<div></div><button data-day="'+ i +'" class="addMealBtn">Add Meal</button></div></td>';
+            '<button data-day="'+ i +'" class="addMealBtn">Add Meal</button></div></td>';
     }
     $('#mealPlanTable').append(html);
 
@@ -41,7 +33,6 @@ $(document).ready(function () {
 
     $('#searchBox>input').keypress(function (event) {
         if(event.which == 13) {
-            $(this).val('');
             if($(this).is('input:first-child')) {
                 $.ajax({
                     url: 'https://www.themealdb.com/api/json/v1/1/search.php?s=' + $(this).val(),
@@ -107,17 +98,6 @@ $(document).ready(function () {
             day = $(this).data('day');
         });
     });
-
-
-    $('#removeMealBtn').on('click', function () {
-        var arr = [monday, tuesday, wednesday, thursday, friday, saturday, sunday];
-        for(var i = 0; i < document.getElementsByClassName('selectedRemove').length; i++) {
-            var selector = '.selectedRemove:eq(' + i +')';
-            var meal = $(selector);
-            arr[meal.parent('div').parent('div').find('button').data('day')].remove($(meal).html());
-        }
-        displayMealsInDays();
-    });
 });
 
 function displayMeals(obj, num) {
@@ -156,41 +136,60 @@ function displayMeals(obj, num) {
 }
 
 function displayMealsInDays() {
+
     var arr = [monday, tuesday, wednesday, thursday, friday, saturday, sunday];
     for(var i = 0; i < arr.length; i++) {
         var html = '';
-        console.log(i);
         for(var l = 0; l < arr[i].meals.length; l++) {
-            console.log('l=' + l);
-            var img = false;
             var currentMeal = arr[i].meals[l];
-            console.log(l == 0 || !img);
-            console.log(currentMeal.api == 'mealDb');
-            if(currentMeal.api == 'mealDb' && (l == 0 || !img)) {
-                $.ajax({
-                    url: 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + currentMeal.id,
-                    success: function (result) {
-                        var selector = '.mealDay:eq(' + i + ')';
-                        console.log(i);
-                        console.log($(selector));
-                        console.log(result.meals[0].strMealThumb);
-                        $(selector).attr('src', result.meals[0].strMealThumb);
-                    },
-                    error: function () {
-                        alert('Error');
-                    }
-                });
-                //https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772
-                img = true;
-            }
-            html += '<div class="mealName">' + currentMeal.name + '</div>'
+            html += '<div>' + currentMeal.name + '</div>'
         }
-        var selector = '.mealDay:eq(' + i + ')>div';
-        $(selector).html(html);
+        document.getElementsByClassName('mealDay')[i].innerHTML += html;
     }
+}
 
-    $('.mealName').on('click', function () {
-        $(this).toggleClass('selectedRemove');
-    });
-    //saveMeal();
+var selected = [];
+
+function Day() {
+    this.meals = [];
+    this.carbonFootprint = {};
+    this.remove = function (name) {
+        for(var i = 0; i < this.meals.length; i++) {
+            if(name == this.meals[i].name) {
+                this.meals.splice(i, 1);
+            }
+        }
+    }
+}
+function startCarbon() {
+    console.log(monday.meals);
+    passData(monday,monday);
+    passData(tuesday,tuesday);
+    passData(wednesday,wednesday);
+    passData(thursday,thursday);
+    passData(friday,friday);
+    passData(saturday,saturday);
+    passData(sunday,sunday);
+
+}
+var monday = new Day();
+var tuesday = new Day();
+var wednesday = new Day();
+var thursday = new Day();
+var friday = new Day();
+var saturday = new Day();
+var sunday = new Day();
+
+function passData(info,day){
+    for(var i = 0; i < info.meals.length;i++){
+        $.ajax({
+            url: 'https://www.themealdb.com/api/json/v1/1/search.php?s=' +info.meals[i] ,
+            success: function (result) {
+                ingredients(result, day)
+            },
+            error: function () {
+                alert('Error');
+            }
+        });
+    }
 }
