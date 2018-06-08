@@ -17,7 +17,7 @@ var user = null;
 $(document).ready(function(){
     user = getParameterByName("user");
     if(user != null){
-        login(user,true);
+        login(user,false);
     }
     var test = reload("users");
     if(test == null){
