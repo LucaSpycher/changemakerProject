@@ -169,6 +169,45 @@ values = [
         "kilo": 1
     }
 ];
+function startCarbon() {
+    if (!isLoggedIn) {
+        $('body').append("You must be logged in to access this feature.");
+    } else {
+        var usr = reload("users")[user];
+        //console.log(monday.meals);
+        passData(monday, monday);
+        passData(tuesday, tuesday);
+        passData(wednesday, wednesday);
+        passData(thursday, thursday);
+        passData(friday, friday);
+        passData(saturday, 'saturday');
+        passData(sunday, 'sunday');
+
+
+    }
+}
+
+    var monday = new Day();
+    var tuesday = new Day();
+    var wednesday = new Day();
+    var thursday = new Day();
+    var friday = new Day();
+    var saturday = new Day();
+    var sunday = new Day();
+function passData(info, day) {
+    for (var i = 0; i < info.meals.length; i++) {
+        $.ajax({
+            url: 'https://www.themealdb.com/api/json/v1/1/search.php?s=' + info.meals[i],
+            success: function (result) {
+                ingredients(result, day)
+            },
+            error: function () {
+                alert('Error');
+            }
+        });
+    }
+}
+
 
 function object(name) {
     var food= '';

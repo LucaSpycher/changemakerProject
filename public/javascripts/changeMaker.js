@@ -23,6 +23,12 @@ $(document).ready(function(){
     if(test == null){
         download([],"users");
     }
+    if(thisPage == 2){
+        startCarbon();
+    }
+    if(thisPage==1){
+        mealplanReady();
+    }
 });
 
 function setupNav(n){

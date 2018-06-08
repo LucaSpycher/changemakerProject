@@ -28,7 +28,7 @@ function setupMealPlanTable() {
     });
 }
 
-$(document).ready(function () {
+function mealplanReady() {
     $('#addMealPopUp').hide();
     $('.closePopUp').on('click', function () {
         $("nav, table, body>a, body>span, body>button").css("filter","blur(0px)");
@@ -117,7 +117,7 @@ $(document).ready(function () {
         }
         displayMealsInDays();
     });
-});
+}
 
 function displayMeals(obj, num) {
     var html = "";
