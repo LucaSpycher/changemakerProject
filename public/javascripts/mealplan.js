@@ -113,8 +113,7 @@ $(document).ready(function () {
         var arr = [monday, tuesday, wednesday, thursday, friday, saturday, sunday];
         for(var i = 0; i < document.getElementsByClassName('selectedRemove').length; i++) {
             var selector = '.selectedRemove:eq(' + i +')';
-            var meal = $(selector);
-            arr[meal.parent('div').parent('div').find('button').data('day')].remove($(meal).html());
+            arr[$(selector).parent('div').parent('div').find('button').data('day')].remove($(selector).html());
         }
         displayMealsInDays();
     });
@@ -170,7 +169,7 @@ function displayMealsInDays() {
         }
         if(arr[i].meals.length != 0) {
             var selector = '.mealDay:eq(' + i +')>img';
-            $(selector).attr('src', 'https://image.shutterstock.com/image-photo/aerial-view-dinner-dish-full-260nw-522021220.jpg')
+            $(selector).attr('src', 'public/images/fullplate.jpg')
         } else {
             var selector = '.mealDay:eq(' + i +')>img';
             $(selector).attr('src', 'public/images/empty-plate.jpg');

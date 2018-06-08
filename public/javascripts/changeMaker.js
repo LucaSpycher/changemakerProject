@@ -11,13 +11,13 @@ function Day() {
     }
 }
 var thisPage = 0;
-var isLoggedIn=false;
+var isLoggedIn = false;
 var user = null;
 
 $(document).ready(function(){
     user = getParameterByName("user");
     if(user != null){
-        login(user);
+        login(user,false);
     }
     var test = reload("users");
     if(test == null){
