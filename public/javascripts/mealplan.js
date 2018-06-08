@@ -170,7 +170,7 @@ function displayMealsInDays() {
         }
         if(arr[i].meals.length != 0) {
             var selector = '.mealDay:eq(' + i +')>img';
-            $(selector).attr('src', 'https://image.shutterstock.com/image-photo/aerial-view-dinner-dish-full-260nw-522021220.jpg')
+            $(selector).attr('src', 'public/images/fullplate.jpg')
         } else {
             var selector = '.mealDay:eq(' + i +')>img';
             $(selector).attr('src', 'public/images/empty-plate.jpg');

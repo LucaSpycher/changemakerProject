@@ -11,7 +11,7 @@ function Day() {
     }
 }
 var thisPage = 0;
-var isLoggedIn=false;
+var isLoggedIn = false;
 var user = null;
 
 $(document).ready(function(){
