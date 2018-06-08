@@ -113,8 +113,7 @@ $(document).ready(function () {
         var arr = [monday, tuesday, wednesday, thursday, friday, saturday, sunday];
         for(var i = 0; i < document.getElementsByClassName('selectedRemove').length; i++) {
             var selector = '.selectedRemove:eq(' + i +')';
-            var meal = $(selector);
-            arr[meal.parent('div').parent('div').find('button').data('day')].remove($(meal).html());
+            arr[$(selector).parent('div').parent('div').find('button').data('day')].remove($(selector).html());
         }
         displayMealsInDays();
     });
