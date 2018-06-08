@@ -23,7 +23,7 @@ function setupMealPlanTable() {
         $('#mealsSearched').html('');
         $('#searchBox>input').val('');
         $('#mealsSelectedDiv').html('');
-        $("nav, table, body>a, body>span").css("filter","blur(6px)");
+        $("nav, table, body>a, body>span, body>button").css("filter","blur(6px)");
         day = $(this).data('day');
     });
 }
@@ -31,17 +31,16 @@ function setupMealPlanTable() {
 $(document).ready(function () {
     $('#addMealPopUp').hide();
     $('.closePopUp').on('click', function () {
-        $("nav, table, body>a, body>span").css("filter","blur(0px)");
+        $("nav, table, body>a, body>span, body>button").css("filter","blur(0px)");
         $('#addMealPopUp').fadeOut();
     });
     $('#cancelMealsIcon').on('click', function () {
-        $("nav, table, body>a, body>span").css("filter","blur(0px)");
+        $("nav, table, body>a, body>span, body>button").css("filter","blur(0px)");
         $('#addMealPopUp').fadeOut();
     });
 
     $('#searchBox>input').keypress(function (event) {
         if(event.which == 13) {
-            $(this).val('');
             if($(this).is('input:first-child')) {
                 $.ajax({
                     url: 'https://www.themealdb.com/api/json/v1/1/search.php?s=' + $(this).val(),
@@ -54,7 +53,7 @@ $(document).ready(function () {
                     }
                 });
             } else if($(this).is('input:nth-child(4)')){
-                var url = 'http://api.nal.usda.gov/ndb/search/?format=json&q=' + $(this).val() + '&sort=n&max=' + 50 + '&api_key=UbHM2FjplenJqUs7PS5TMHT56QTnQWxIdhHWbRMO';
+                var url = 'http://api.nal.usda.gov/ndb/search/?format=json&q=' + $(this).val() + '&sort=n&max=50&api_key=UbHM2FjplenJqUs7PS5TMHT56QTnQWxIdhHWbRMO';
                 $.ajax({
                     url: url,
                     type: 'GET',
@@ -72,6 +71,7 @@ $(document).ready(function () {
             } else {
                 //search for single ingredients in cameron's thing
             }
+            $(this).val('');
         }
     });
 
@@ -89,7 +89,7 @@ $(document).ready(function () {
     });
 
     $('#addMealsIcon').on('click', function () {
-        $("nav, table, body>a, body>span").css("filter","blur(0px)");
+        $("nav, table, body>a, body>span, body>button").css("filter","blur(0px)");
         var arr = [monday, tuesday, wednesday, thursday, friday, saturday, sunday];
         for(var i = 0; i < document.getElementsByClassName('selected').length; i++) {
             var selector = '.selected:eq('+ i +')';
@@ -103,7 +103,7 @@ $(document).ready(function () {
             $('#mealsSearched').html('');
             $('#searchBox>input').val('');
             $('#mealsSelectedDiv').html('');
-            $("nav, table, body>a, body>span").css("filter","blur(6px)");
+            $("nav, table, body>a, body>span, body>button").css("filter","blur(6px)");
             day = $(this).data('day');
         });
     });
@@ -132,7 +132,7 @@ function displayMeals(obj, num) {
             var currentMeal = meal[i];
             var addMeal = [];
             if(num == 1) {
-                addMeal = ['','<div data-meal="usda;'+ currentMeal.nbdno +'" class="mealSearchOutput unselected">' + currentMeal.name.split(', UPC')[0].split(', GTIN')[0] +'</div>'];
+                addMeal = ['','<div data-meal="usda;'+ currentMeal.ndbno +'" class="mealSearchOutput unselected">' + currentMeal.name.split(', UPC')[0].split(', GTIN')[0] +'</div>'];
             } else {
                 addMeal = ['<div data-meal="mealDb;'+ currentMeal.idMeal +'" class="mealSearchOutput unselected">' + currentMeal.strMeal +'</div>', ''];
             }
@@ -155,40 +155,29 @@ function displayMeals(obj, num) {
     // });
 }
 
+
+var imgArray = [];
+
 function displayMealsInDays() {
     var arr = [monday, tuesday, wednesday, thursday, friday, saturday, sunday];
     for(var i = 0; i < arr.length; i++) {
         var html = '';
-        console.log(i);
+        var img = false;
+        var day = i;
         for(var l = 0; l < arr[i].meals.length; l++) {
-            console.log('l=' + l);
-            var img = false;
             var currentMeal = arr[i].meals[l];
-            console.log(l == 0 || !img);
-            console.log(currentMeal.api == 'mealDb');
-            if(currentMeal.api == 'mealDb' && (l == 0 || !img)) {
-                $.ajax({
-                    url: 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + currentMeal.id,
-                    success: function (result) {
-                        var selector = '.mealDay:eq(' + i + ')';
-                        console.log(i);
-                        console.log($(selector));
-                        console.log(result.meals[0].strMealThumb);
-                        $(selector).attr('src', result.meals[0].strMealThumb);
-                    },
-                    error: function () {
-                        alert('Error');
-                    }
-                });
-                //https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772
-                img = true;
-            }
             html += '<div class="mealName">' + currentMeal.name + '</div>'
+        }
+        if(arr[i].meals.length != 0) {
+            var selector = '.mealDay:eq(' + i +')>img';
+            $(selector).attr('src', 'https://image.shutterstock.com/image-photo/aerial-view-dinner-dish-full-260nw-522021220.jpg')
+        } else {
+            var selector = '.mealDay:eq(' + i +')>img';
+            $(selector).attr('src', 'public/images/empty-plate.jpg');
         }
         var selector = '.mealDay:eq(' + i + ')>div';
         $(selector).html(html);
     }
-
     $('.mealName').on('click', function () {
         $(this).toggleClass('selectedRemove');
     });
