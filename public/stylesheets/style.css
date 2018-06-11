@@ -61,13 +61,11 @@ a#logo img{
     float: right;
     margin-right: 15px;
 }
-
 #mealPlanTable {
     max-width: 800px;
     overflow: scroll;
     margin: 20px auto;
 }
-
 .mealDay {
     background: #ededed;
     width: 167px;
@@ -80,11 +78,9 @@ a#logo img{
     position: relative;
     overflow: hidden;
 }
-
 .mealDay h4 {
     margin: 10px 0;
 }
-
 .addMealBtn {
     position: absolute;
     bottom: 0;
@@ -97,16 +93,13 @@ a#logo img{
     height: 30px;
     font-family: "poppins", sans-serif;
 }
-
 .addMealBtn:hover, #removeMealBtn:hover {
     background: #40b001;
     cursor: pointer;
 }
-
 .addMealBtn:focus, #removeMealBtn:focus {
     outline: none;
 }
-
 #removeMealBtn {
     border: none;
     border-radius: 4px;
@@ -116,12 +109,10 @@ a#logo img{
     height: 30px;
     font-family: "poppins", sans-serif;
 }
-
 .mealImg {
     height: 125px;
     width: 167px;
 }
-
 #login{
     background-color: #60d020;
     width: 240px;
@@ -159,7 +150,6 @@ fieldset a:hover, .bodyLink:hover{
   color: black;
     cursor: pointer;
 }
-
 #addMealPopUp {
     position: fixed;
     top: 0;
@@ -169,7 +159,6 @@ fieldset a:hover, .bodyLink:hover{
     background: rgba(0, 0, 0, 0.63333);
     z-index: 4;
 }
-
 #searchBox {
     width: 600px;
     height: 500px;
@@ -183,7 +172,6 @@ fieldset a:hover, .bodyLink:hover{
     text-align: center;
     padding: 20px;
 }
-
 #searchBox>input{
     float: right;
     width: 200px;
@@ -196,8 +184,6 @@ fieldset a:hover, .bodyLink:hover{
     padding-bottom: 9px;
     font-family: "Poppins", sans-serif;
 }
-
-
 #mealsSearched {
     padding: 0;
     position: absolute;
@@ -213,51 +199,41 @@ fieldset a:hover, .bodyLink:hover{
     text-align: left;
     box-sizing: border-box;
 }
-
 .mealSearchOutput {
     padding-left: 6px;
 }
-
 .selected {
     color: #40b000;
 }
-
 .selectedRemove {
     background: rgba(255, 246, 103, 0.65);
 }
-
 .mealSearchOutput:nth-of-type(odd) {
     background: rgba(196, 196, 196, 0.46);
 }
-
 .mealSearchOutput:hover {
     background: #5fd121;
     cursor: pointer;
 }
-
 #addMealsIcon {
     position: absolute;
     bottom: 29px;
     left: 82px;
 }
-
 #cancelMealsIcon {
     position: absolute;
     bottom: 29px;
     left: 250px;
     transform: rotate(45deg);
 }
-
 #addMealsIcon, #cancelMealsIcon {
     height: 50px;
     width: 50px;
     opacity: .5;
 }
-
 #addMealsIcon:hover, #cancelMealsIcon:hover {
     cursor: pointer;
 }
-
 #mealsSelected {
     position: absolute;
     bottom: 103px;
@@ -269,7 +245,6 @@ fieldset a:hover, .bodyLink:hover{
     box-sizing: border-box;
     padding-right: 0;
 }
-
 #mealsSelectedDiv {
     overflow-y: scroll;
     height: 233px;
@@ -277,15 +252,12 @@ fieldset a:hover, .bodyLink:hover{
     font-size: 12px;
     padding-left: 1px;
 }
-
 #mealsSelectedDiv ol {
     padding-left: 20px;
 }
-
 #mealsSelectedDiv ol li {
     margin-bottom: 5px
 }
-
 .closePopUp {
     position: absolute;
     top: 6px;
@@ -293,7 +265,6 @@ fieldset a:hover, .bodyLink:hover{
     color: white;
     z-index: 5;
 }
-
 .closePopUp:hover {
     cursor: pointer;
 }
