@@ -2,13 +2,12 @@ var PAGES = [["Homepage","index"],["Plan a Meal","mealplan"],["Environmental Imp
 function Day() {
     this.meals = [];
     this.carbonFootprint = {};
-    this.remove = function (name) {
-        for(var i = 0; i < this.meals.length; i++) {
-            if(name == this.meals[i].name) {
-                this.meals.splice(i, 1);
-            }
-        }
-    }
+    this.remove =
+        "for(var i = 0; i < *; i++) {"+
+            "\nif(name == this.meals[i].name) {"+
+                "\nthis.meals.splice(i, 1);"+
+            "\n}" +
+            "\n}";
 }
 var thisPage = 0;
 var isLoggedIn = false;

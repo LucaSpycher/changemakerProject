@@ -113,7 +113,11 @@ function mealplanReady() {
         var arr = [monday, tuesday, wednesday, thursday, friday, saturday, sunday];
         for(var i = 0; i < document.getElementsByClassName('selectedRemove').length; i++) {
             var selector = '.selectedRemove:eq(' + i +')';
-            arr[$(selector).parent('div').parent('div').find('button').data('day')].remove($(selector).html());
+            var command = arr[$(selector).parent('div').parent('div').find('button').data('day')].remove;
+            var arr = command.split("*");
+            arr.push($(selector).html());
+            command = arr[0]+arr[2]+arr[1];
+            eval(command);
         }
         displayMealsInDays();
     });
