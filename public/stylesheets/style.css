@@ -1,381 +1,372 @@
+nav,nav a{
+    margin-top:0;
+    border-top-width:0
+}
+a#logo,a#logo img,nav a{
+    display:inline-block
+}
+#user,a#logo img{
+    filter:brightness(100);
+    height:35px
+}
+#user,a#logo,a#logo img,nav{
+    height:35px
+}
+#login td,#searchBox,.mealDay{
+    text-align:center
+}
+#login,body,nav a{
+    transition:.4s
+}
 body{
-    border-width: 0px;
-    margin: 0px;
-    padding: 0px;
-    font-family: "Poppins", sans-serif;
-    min-width: 800px;
-    transition: 400ms;
-    transition-property: color,width,height,background-color,opacity,padding;
+    border-width:0;
+    margin:0;
+    padding:0;
+    font-family:Poppins,sans-serif;
+    min-width:800px;
+    transition-property:color,width,height,background-color,opacity,padding
+}
+#removeMealBtn,.addMealBtn{
+    color:#fff;
+    height:30px;
+    font-family:poppins,sans-serif
 }
 nav{
-    background-color: #60d020;
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin-top: 0px;
-    border-top-width: 0px;
-    height: 35px;
-    width: 100%;
-    z-index: 3;
+    background-color:#60d020;
+    position:sticky;
+    top:0;
+    left:0;
+    right:0;
+    width:100%;
+    z-index:3
 }
 nav a{
-    padding: 5px 15px 5px 15px;
-    margin-top: 0px;
-    border-top-width: 0px;
-    color: white;
-    transition: 400ms;
-    transition-property: color,width,height,background-color,opacity,padding;
-    text-decoration: none;
-    border-right: 2px solid white;
-    display: inline-block;
-    float: left;
+    padding:5px 15px;
+    color:#fff;
+    transition-property:color,width,height,background-color,opacity,padding;
+    text-decoration:none;
+    border-right:2px solid #fff;
+    float:left
 }
 .current{
-    background-color: #40b000;
+    background-color:#40b000
 }
 nav a:hover{
-    background-color: #80f040;
-    color: black;
-    padding-right: 25px;
+    background-color:#80f040;
+    color:#000;
+    padding-right:25px
 }
 a#logo{
-    object-fit: contain;
-    display: inline-block;
-    padding: 0px 15px 0px 15px;
-    height: 35px;
+    object-fit:contain;
+    padding:0 15px
 }
 a#logo:hover{
-    background-color: #60d020;
-    color: white;
-    padding-right: 15px;
-}
-a#logo img{
-    filter: brightness(100);
-    display: inline-block;
-    height: 35px;
+    background-color:#60d020;
+    color:#fff;
+    padding-right:15px
 }
 #user{
-    filter: brightness(100);
-    height: 35px;
-    float: right;
-    margin-right: 15px;
+    float:right;
+    margin-right:15px
 }
-#mealPlanTable {
-    max-width: 800px;
-    overflow: scroll;
-    margin: 20px auto;
+#mealPlanTable{
+    max-width:800px;
+    overflow:scroll;
+    margin:20px auto
 }
-.mealDay {
-    background: #ededed;
-    width: 167px;
-    /*border: black solid 2px;*/
-    max-height: 3000px;
-    border-radius: 4px;
-    text-align: center;
-    min-height: 400px;
-    padding-bottom: 40px;
-    position: relative;
-    overflow: hidden;
+.mealDay{
+    background:#ededed;
+    width:167px;
+    max-height:3000px;
+    border-radius:4px;
+    min-height:400px;
+    padding-bottom:40px;
+    position:relative;
+    overflow:hidden
 }
-.mealDay h4 {
-    margin: 10px 0;
+.mealDay h4{
+    margin:10px 0
 }
-.addMealBtn {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    border: none;
-    border-radius: 0 0 4px 4px;
-    background: #5fd121;
-    color: white;
-    width: 100%;
-    height: 30px;
-    font-family: "poppins", sans-serif;
+.addMealBtn{
+    position:absolute;
+    bottom:0;
+    left:0;
+    border:none;
+    border-radius:0 0 4px 4px;
+    background:#5fd121;
+    width:100%
 }
-.addMealBtn:hover, #removeMealBtn:hover {
-    background: #40b001;
-    cursor: pointer;
+#removeMealBtn:hover,.addMealBtn:hover{
+    background:#40b001;
+    cursor:pointer
 }
-.addMealBtn:focus, #removeMealBtn:focus {
-    outline: none;
+#removeMealBtn:focus,.addMealBtn:focus{
+    outline:0
 }
-#removeMealBtn {
-    border: none;
-    border-radius: 4px;
-    background: #5fd121;
-    color: white;
-    width: 170px;
-    height: 30px;
-    font-family: "poppins", sans-serif;
+#removeMealBtn{
+    border:none;
+    border-radius:4px;
+    background:#5fd121;
+    width:170px
 }
-.mealImg {
-    height: 125px;
-    width: 167px;
+.mealImg{
+    height:125px;
+    width:167px
 }
 #login{
-    background-color: #60d020;
-    width: 240px;
-    position: absolute;
-    right: 0;
-    top: 37px;
-    z-index: 20;
-    transition: 400ms;
-    transition-property: color,width,height,background-color,opacity,padding;
+    background-color:#60d020;
+    width:240px;
+    position:absolute;
+    right:0;
+    top:37px;
+    z-index:20;
+    transition-property:color,width,height,background-color,opacity,padding
 }
 #login table{
-    width: 90%;
-    margin: auto;
-    margin-top: 10px;
+    width:90%;
+    margin:10px auto auto
 }
 #login td{
-    width: 105px;
-    border-bottom:6px solid #60d020;
-    text-align: center;
+    width:105px;
+    border-bottom:6px solid #60d020
 }
 #login td:first-of-type{
-    border-right: 6px solid #60d020;
+    border-right:6px solid #60d020
 }
 #login td:hover{
-    background-color: white;
+    background-color:#fff
 }
-fieldset a, .bodyLink{
-  color: #209000;
-  font-weight: bold;
-  text-decoration: none;
-  transition: 200ms;
-  transition-property: color,width,height,background-color,opacity,padding;
+.bodyLink,fieldset a{
+    color:#209000;
+    font-weight:700;
+    text-decoration:none;
+    transition:.2s;
+    transition-property:color,width,height,background-color,opacity,padding
 }
-fieldset a:hover, .bodyLink:hover{
-  color: black;
-    cursor: pointer;
+.bodyLink:hover,fieldset a:hover{
+    color:#000;
+    cursor:pointer
 }
-#addMealPopUp {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.63333);
-    z-index: 4;
+#addMealPopUp{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.63333);
+    z-index:4
 }
-#searchBox {
-    width: 600px;
-    height: 500px;
-    position: fixed;
-    top: calc(45% - 250px);
-    left: calc(50% - 300px);
-    background: white;
-    /*border: 2px black solid;*/
-    border-radius: 4px;
-    z-index: 5;
-    text-align: center;
-    padding: 20px;
+#searchBox{
+    width:600px;
+    height:500px;
+    position:fixed;
+    top:calc(45% - 250px);
+    left:calc(50% - 300px);
+    background:#fff;
+    border-radius:4px;
+    z-index:5;
+    padding:20px
+}
+#mealsSearched,#searchBox>input{
+    border:2px solid #000;
+    box-sizing:border-box
 }
 #searchBox>input{
-    float: right;
-    width: 200px;
-    height: 30px;
-    padding-top: 10px;
-    border: black solid 2px;
-    border-radius: 4px;
-    padding-left: 7px;
-    box-sizing: border-box;
-    padding-bottom: 9px;
-    font-family: "Poppins", sans-serif;
+    float:right;
+    width:200px;
+    height:30px;
+    padding-top:10px;
+    border-radius:4px;
+    padding-left:7px;
+    padding-bottom:9px;
+    font-family:Poppins,sans-serif
 }
-#mealsSearched {
-    padding: 0;
-    position: absolute;
-    top: 0;
-    left: 10px;
-    width: 350px;
-    height: 413px;
-    margin: 20px 10px;
-    border: black solid 2px;
-    border-radius: 4px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    text-align: left;
-    box-sizing: border-box;
+#mealsSearched{
+    padding:0;
+    position:absolute;
+    top:0;
+    left:10px;
+    width:350px;
+    height:413px;
+    margin:20px 10px;
+    border-radius:4px;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    text-align:left
 }
-.mealSearchOutput {
-    padding-left: 6px;
+.mealSearchOutput{
+    padding-left:6px
 }
-.selected {
-    color: #40b000;
+.selected{
+    color:#40b000
 }
-.selectedRemove {
-    background: rgba(255, 246, 103, 0.65);
+.selectedRemove{
+    background:rgba(255,246,103,.65)
 }
-.mealSearchOutput:nth-of-type(odd) {
-    background: rgba(196, 196, 196, 0.46);
+.mealSearchOutput:nth-of-type(odd){
+    background:rgba(196,196,196,.46)
 }
-.mealSearchOutput:hover {
-    background: #5fd121;
-    cursor: pointer;
+.mealSearchOutput:hover{
+    background:#5fd121;
+    cursor:pointer
 }
-#addMealsIcon {
-    position: absolute;
-    bottom: 29px;
-    left: 82px;
+#addMealsIcon{
+    position:absolute;
+    bottom:29px;
+    left:82px
 }
-#cancelMealsIcon {
-    position: absolute;
-    bottom: 29px;
-    left: 250px;
-    transform: rotate(45deg);
+#cancelMealsIcon{
+    position:absolute;
+    bottom:29px;
+    left:250px;
+    transform:rotate(45deg)
 }
-#addMealsIcon, #cancelMealsIcon {
-    height: 50px;
-    width: 50px;
-    opacity: .5;
+#addMealsIcon,#cancelMealsIcon{
+    height:50px;
+    width:50px;
+    opacity:.5
 }
-#addMealsIcon:hover, #cancelMealsIcon:hover {
-    cursor: pointer;
+#addMealsIcon:hover,#cancelMealsIcon:hover{
+    cursor:pointer
 }
-#mealsSelected {
-    position: absolute;
-    bottom: 103px;
-    right: 20px;
-    width: 200px;
-    border: black solid 2px;
-    border-radius: 4px;
-    height: 265px;
-    box-sizing: border-box;
-    padding-right: 0;
+#mealsSelected{
+    position:absolute;
+    bottom:103px;
+    right:20px;
+    width:200px;
+    border:2px solid #000;
+    border-radius:4px;
+    height:265px;
+    box-sizing:border-box;
+    padding-right:0
 }
-#mealsSelectedDiv {
-    overflow-y: scroll;
-    height: 233px;
-    text-align: left;
-    font-size: 12px;
-    padding-left: 1px;
+#mealsSelectedDiv{
+    overflow-y:scroll;
+    height:233px;
+    text-align:left;
+    font-size:12px;
+    padding-left:1px
 }
-#mealsSelectedDiv ol {
-    padding-left: 20px;
+div.result,div.result>img{
+    height:100px
 }
-#mealsSelectedDiv ol li {
-    margin-bottom: 5px
+#mealsSelectedDiv ol{
+    padding-left:20px
 }
-.closePopUp {
-    position: absolute;
-    top: 6px;
-    right: 21px;
-    color: white;
-    z-index: 5;
+#mealsSelectedDiv ol li{
+    margin-bottom:5px
 }
-.closePopUp:hover {
-    cursor: pointer;
+.closePopUp{
+    position:absolute;
+    top:6px;
+    right:21px;
+    color:#fff;
+    z-index:5
+}
+.closePopUp:hover{
+    cursor:pointer
 }
 input#searchbar{
-    display: block;
-    font-size: 18px;
-    min-width: 540px;
-    width: 80%;
-    max-width: 800px;
-    transition: 200ms;
-    transition-property: color,width,height,background-color,opacity,padding;
-    margin: 0 auto;
-    margin-top: 10px;
-    padding: 6px;
-    padding-right: 60px;
-    padding-left: 12px;
-    border: 1.75px solid #209000;
-    outline: none;
-    font-family: "Poppins";
-    font-weight: 500;
-    color: #209000;
-    border-radius: 10px;
-    background-image: url("../images/square-globe-with-leaf.png");
-    background-size: 32px;
-    background-repeat: no-repeat;
-    background-position: 97.5%;
+    display:block;
+    font-size:18px;
+    min-width:540px;
+    width:80%;
+    max-width:800px;
+    transition:.2s;
+    transition-property:color,width,height,background-color,opacity,padding;
+    margin:10px auto 0;
+    padding:6px 60px 6px 12px;
+    border:1.75px solid #209000;
+    outline:0;
+    font-family:Poppins;
+    font-weight:500;
+    color:#209000;
+    border-radius:10px;
+    background-image:url(../images/square-globe-with-leaf.png);
+    background-size:32px;
+    background-repeat:no-repeat;
+    background-position:97.5%
 }
 input#searchbar::placeholder{
-    color: rgba(32,144,0,.3);
-}
-div.result > img{
-    height: 100px;
+    color:rgba(32,144,0,.3)
 }
 div.result{
-    background-color: #ededed;
-    width: 320px;
-    height: 100px;
-    display: inline-block;
-    margin: 5px;
-    text-align: left;
-    overflow: hidden;
+    background-color:#ededed;
+    width:320px;
+    display:inline-block;
+    margin:5px;
+    text-align:left;
+    overflow:hidden
 }
 div.result span:first-of-type{
-    float: right;
-    width: 204px;
-    margin-right: 7.5px;
-    margin-top: 3px;
-    font-size: 14px;
-    line-height: 1.1;
-    height: 90px;
-    color: #404040
+    float:right;
+    width:204px;
+    margin-right:7.5px;
+    margin-top:3px;
+    font-size:14px;
+    line-height:1.1;
+    height:90px;
+    color:#404040
 }
 div.result span:first-of-type em{
-    text-align: center;
-    font-weight: 500;
-    font-size: 16px;
-    font-style: normal;
-    border-bottom: 2px solid white;
-    display: block;
-    color: #004001;
-    user-select: none;
+    text-align:center;
+    font-weight:500;
+    font-size:16px;
+    font-style:normal;
+    border-bottom:2px solid #fff;
+    display:block;
+    color:#004001;
+    user-select:none
 }
 div.result span:first-of-type i{
-    font-style: normal;
-    background-color: rgba(32,144,0,.8);
-    color: #ededed;
-    padding: 2px 4px 2px 4px;
-    font-size: 12px;
-    display: inline-block;
-    margin-top: 3px;
-    text-transform: uppercase;
-    user-select: none;
+    font-style:normal;
+    background-color:rgba(32,144,0,.8);
+    color:#ededed;
+    padding:2px 4px;
+    font-size:12px;
+    display:inline-block;
+    margin-top:3px;
+    text-transform:uppercase;
+    user-select:none
 }
 div#res{
-    text-align: center;
-    margin-top: 7.5px;
+    text-align:center;
+    margin-top:7.5px
 }
 #res img.focus{
-    position: fixed;
-    height: 500px;
-    top: 0;
-    z-index: 300;
+    position:fixed;
+    height:500px;
+    top:0;
+    z-index:300
 }
 .shade{
-    background-color: black;
-    opacity: .8333;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 200;
+    background-color:#000;
+    opacity:.8333;
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index:200
 }
 div#res div.result img.linkimg{
-    height: 25px;
-    opacity: .2;
-    position: absolute;
-    margin-top: 72.5px;
-    margin-left: 192.5px;
-    transition: 200ms;
-    transition-property: color,width,height,background-color,opacity,padding;
+    height:25px;
+    opacity:.2;
+    position:absolute;
+    margin-top:72.5px;
+    margin-left:192.5px;
+    transition:.2s;
+    transition-property:color,width,height,background-color,opacity,padding
 }
 div#res div.result img.linkimg:hover{
-    opacity: .6;
+    opacity:.6
 }
 #login td>input[type=number]{
-    font-size: 14px;
-    border: none;
-    width: 95px;
-    padding: 0px 4px 0px 6px;
-    height: 27px;
-    margin: auto;
-    outline: none;
+    font-size:14px;
+    border:none;
+    width:95px;
+    padding:0 4px 0 6px;
+    height:27px;
+    margin:auto;
+    outline:0
 }
